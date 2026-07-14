@@ -60,6 +60,7 @@ body {
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
   background: var(--primary-color) !important;
+  color: white !important;
 }
 
 .button.is-dark:active {
@@ -382,11 +383,20 @@ code {
 }
 
 /* BibTeX Section Improvements */
+.bibtex-entry + .bibtex-entry {
+  margin-top: 2.5rem;
+}
+
 .bibtex-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
+}
+
+.bibtex-header .subtitle {
+  margin: 0;
+  font-weight: 600;
 }
 
 .copy-bibtex-btn {

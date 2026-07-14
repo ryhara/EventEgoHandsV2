@@ -37,11 +37,11 @@ document.addEventListener('keydown', function(event) {
 });
 
 // Copy BibTeX to clipboard
-function copyBibTeX() {
-    const bibtexElement = document.getElementById('bibtex-code');
-    const button = document.querySelector('.copy-bibtex-btn');
+function copyBibTeX(button) {
+    const entry = button.closest('.bibtex-entry');
+    const bibtexElement = entry ? entry.querySelector('pre code') : null;
     const copyText = button.querySelector('.copy-text');
-    
+
     if (bibtexElement) {
         navigator.clipboard.writeText(bibtexElement.textContent).then(function() {
             // Success feedback
