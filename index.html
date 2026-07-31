@@ -231,7 +231,7 @@
   <main id="main-content">
   <section class="hero">
     <div class="hero-body">
-      <div class="container is-max-desktop">
+      <div class="container is-max-widescreen">
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <!-- TODO: Replace with your paper title -->
@@ -253,7 +253,11 @@
 
                   <div class="is-size-5 publication-authors">
                     <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block"><sup>1</sup> Keio University, <sup>2</sup> JST Presto<br>Under Review</span>
+                    <span class="author-block"><sup>1</sup> Keio University, <sup>2</sup> JST Presto</span>
+                    <div style="margin-top: 1.5rem;">
+                      <!-- TODO: Replace with the conference/journal name once accepted -->
+                      <span class="venue-badge" style="display: inline-block; background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #ffffff; font-weight: 600; font-size: 1rem; padding: 0.4em 1.2em; border-radius: 9999px; letter-spacing: 0.02em; box-shadow: 0 2px 8px rgba(37, 99, 235, 0.35);">Under Review</span>
+                    </div>
                     <!-- TODO: Remove this line if no equal contribution -->
                   </div>
 
@@ -277,7 +281,7 @@
                       <span class="icon">
                         <i class="ai ai-arxiv"></i>
                       </span>
-                      <span>arXiv</span>
+                      <span>arXiv (Coming Soon)</span>
                     </a>
                     </span>
 
@@ -299,7 +303,7 @@
                       <span class="icon">
                         <i class="fab fa-github"></i>
                       </span>
-                      <span>Code</span>
+                      <span>Code (Coming Soon)</span>
                     </a>
                   </span>
 
@@ -319,7 +323,7 @@
                       <span class="icon">
                         <i class="fas fa-database"></i>
                       </span>
-                      <span>EEH-R Dataset</span>
+                      <span>EEH-R Dataset (Coming Soon)</span>
                     </a>
                   </span>
 
@@ -341,25 +345,25 @@
 </section>
 
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
+<!-- <section class="hero teaser">
+  <div class="container is-max-widescreen">
     <div class="hero-body">
       <h2 class="subtitle has-text-centered">
-        under review. After the review, we will release the code and dataset.
       </h2>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
-  <div class="container is-max-desktop">
+  <div class="container is-max-widescreen">
     <div class="columns is-centered has-text-centered">
       <div class="column">
         <h2 class="title is-3" style="display: inline-block; white-space: nowrap;">Abstract</h2>
         <div class="content has-text-justified" style="max-width: 800px; margin: 0 auto;">
           <p>
             abstract
+            under review. After the review, we will release the code and dataset.
           </p>
         </div>
       </div>
@@ -369,29 +373,180 @@
 <!-- End paper abstract -->
 
 <section class="section hero is-small">
-  <div class="container is-max-desktop">
+  <div class="container is-max-widescreen">
     <div class="columns is-centered has-text-centered">
       <div class="column">
         <h2 class="title is-3" style="display: inline-block; white-space: nowrap;">Method</h2>
-        <div class="content has-text-justified" style="max-width: 800px; margin: 0 auto;">
-          <p>
-            method
-          </p>
-        </div>
+        <figure style="margin: 1.5rem auto;">
+          <img src="static/images/model.png" alt="Overview of the proposed method" style="max-width: 100%; height: auto;">
+          <figcaption style="font-size: 0.9rem; margin-top: 0.5rem; text-align: justify;">
+            Architecture of EventEgoHands++. The pipeline consists of two primary stages: (1) Hand Extraction Stage, where a hand detector identifies and extracts hand regions from event data, and (2) Hand Reconstruction Stage, which utilizes a vision encoder for feature extraction and estimates 3D hand poses through Adaptive Attention based on the detection results.
+          </figcaption>
+        </figure>
       </div>
     </div>
   </div>
 </section>
 
 <section class="section hero is-light">
-  <div class="container is-max-desktop">
+  <div class="container is-max-widescreen">
     <div class="columns is-centered has-text-centered">
       <div class="column">
-        <h2 class="title is-3" style="display: inline-block; white-space: nowrap;">Synthetic Dataset: N-HOT3D</h2>
-        <div class="content has-text-justified" style="max-width: 800px; margin: 0 auto;">
-          <p>
-            synthetic dataset
+        <h2 class="title is-3" style="display: inline-block; white-space: nowrap;">Dataset</h2>
+
+        <!-- Comparison table of event-based hand datasets -->
+        <div class="content" style="margin: 1.5rem auto;">
+          <p class="has-text-centered" style="font-size: 0.95rem;">
+            Comparison of event-based hand datasets. The asterisk indicates that the corresponding annotation is available for a subset of the frames.
           </p>
+          <div style="overflow-x: auto;">
+            <table class="table is-bordered is-narrow is-hoverable" style="margin: 0 auto; font-size: 0.85rem;">
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Dataset</th>
+                  <th class="has-text-centered">View</th>
+                  <th class="has-text-centered">Hands</th>
+                  <th class="has-text-centered">Subs.</th>
+                  <th class="has-text-centered">Dur.</th>
+                  <th class="has-text-centered">Seq.</th>
+                  <th class="has-text-centered">#GT</th>
+                  <th class="has-text-centered">Annotation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td rowspan="3">Synthetic</td>
+                  <td>EventHands (Synthetic)</td>
+                  <td class="has-text-centered">Third</td>
+                  <td class="has-text-centered">Single</td>
+                  <td class="has-text-centered">-</td>
+                  <td class="has-text-centered">100 h</td>
+                  <td class="has-text-centered">-</td>
+                  <td class="has-text-centered">360M</td>
+                  <td class="has-text-centered">MANO</td>
+                </tr>
+                <tr>
+                  <td>Ev2Hands-S</td>
+                  <td class="has-text-centered">Third</td>
+                  <td class="has-text-centered">Both</td>
+                  <td class="has-text-centered">-</td>
+                  <td class="has-text-centered">-</td>
+                  <td class="has-text-centered">-</td>
+                  <td class="has-text-centered">28K</td>
+                  <td class="has-text-centered">MANO, Event seg.</td>
+                </tr>
+                <tr style="background-color: #f0f0f0;">
+                  <td><strong>N-HOT3D (Ours)</strong></td>
+                  <td class="has-text-centered"><strong>Ego</strong></td>
+                  <td class="has-text-centered">Both</td>
+                  <td class="has-text-centered"><strong>9</strong></td>
+                  <td class="has-text-centered">4.4 h</td>
+                  <td class="has-text-centered"><strong>136</strong></td>
+                  <td class="has-text-centered">480K</td>
+                  <td class="has-text-centered">MANO, Hand mask/bbox</td>
+                </tr>
+                <tr>
+                  <td rowspan="4">Real</td>
+                  <td>EventHands (Real)</td>
+                  <td class="has-text-centered">Third</td>
+                  <td class="has-text-centered">Single</td>
+                  <td class="has-text-centered">-</td>
+                  <td class="has-text-centered">12.6 s</td>
+                  <td class="has-text-centered">4</td>
+                  <td class="has-text-centered">357</td>
+                  <td class="has-text-centered">2D keypoints</td>
+                </tr>
+                <tr>
+                  <td>Ev2Hands-R</td>
+                  <td class="has-text-centered">Third</td>
+                  <td class="has-text-centered">Both</td>
+                  <td class="has-text-centered">5</td>
+                  <td class="has-text-centered">20.1 m</td>
+                  <td class="has-text-centered">8</td>
+                  <td class="has-text-centered">70K</td>
+                  <td class="has-text-centered">3D keypoints</td>
+                </tr>
+                <tr>
+                  <td>EvRealHands</td>
+                  <td class="has-text-centered">Third</td>
+                  <td class="has-text-centered">Single</td>
+                  <td class="has-text-centered">10</td>
+                  <td class="has-text-centered">79 m</td>
+                  <td class="has-text-centered">102</td>
+                  <td class="has-text-centered">425K</td>
+                  <td class="has-text-centered">MANO</td>
+                </tr>
+                <tr style="background-color: #f0f0f0;">
+                  <td><strong>EEH-R (Ours)</strong></td>
+                  <td class="has-text-centered"><strong>Ego</strong></td>
+                  <td class="has-text-centered">Both</td>
+                  <td class="has-text-centered">8</td>
+                  <td class="has-text-centered"><strong>2.36 h</strong></td>
+                  <td class="has-text-centered">85</td>
+                  <td class="has-text-centered"><strong>1M</strong></td>
+                  <td class="has-text-centered">MANO, (Hand mask/bbox)*</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Dataset figures (white background box) -->
+        <div style="background-color: #ffffff; border-radius: 12px; padding: 1.5rem 1.5rem 2rem; margin-top: 1.5rem;">
+          <!-- Dataset samples and capture setup side by side -->
+          <div class="columns is-centered">
+            <div class="column is-half">
+              <figure>
+                <img src="static/images/dataset_sample.png" alt="Samples of the N-HOT3D and EEH-R datasets" style="max-width: 100%; height: auto;">
+                <figcaption style="font-size: 0.9rem; margin-top: 0.5rem; text-align: justify;">
+                  Dataset samples. The top shows the synthetic dataset N-HOT3D, and the bottom shows the real-world dataset EEH-R.
+                </figcaption>
+              </figure>
+            </div>
+            <div class="column is-half">
+              <figure>
+                <img src="static/images/capture_setup.png" alt="Capture system setup of the EEH-R real dataset" style="max-width: 100%; height: auto;">
+                <figcaption style="font-size: 0.9rem; margin-top: 0.5rem; text-align: justify;">
+                  Capture system setup. (a) Arrangement of OptiTrack cameras, (b) head-mounted DAVIS346 event camera, (c) objects from kitchen and workspace categories, (d) MoCap gloves (left) and plain fabric gloves worn over MoCap gloves (right).
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <!-- Synthetic-to-real gap analysis -->
+          <!-- <h3 class="title is-4" style="margin-top: 2rem;">Analysis of the Synthetic-to-Real Gap</h3>
+          <div class="content has-text-justified" style="max-width: 800px; margin: 0 auto;">
+            <p>
+              We analyze the gap between our synthetic dataset (N-HOT3D) and real dataset (EEH-R) in terms of event data statistics.
+            </p>
+          </div>
+          <figure style="margin: 1rem auto 0;">
+            <img src="static/images/event_analysis_h.png" alt="Analysis of event characteristics in the synthetic and real-world datasets" style="max-width: 100%; height: auto;">
+            <figcaption style="font-size: 0.9rem; margin-top: 0.5rem; text-align: justify;">
+              Analysis of event characteristics in the synthetic and real-world datasets. (Left) Distribution of the number of events per frame (1/30 s). (Right) Temporal distribution of events within a frame (1/30 s).
+            </figcaption>
+          </figure> -->
+        </div>
+
+        <!-- Dataset sample videos carousel -->
+        <h3 class="title is-4" style="margin-top: 2.5rem;">Sample Videos</h3>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item">
+            <video autoplay controls muted loop playsinline style="width: 100%; height: auto;">
+              <source src="static/videos/NHOT3D_P0002_016222d1_30s.mp4" type="video/mp4">
+            </video>
+            <p class="subtitle">Sample from N-HOT3D (Synthetic)</p>
+          </div>
+          <!-- TODO: Add more sample videos by duplicating the item block below -->
+          <!--
+          <div class="item">
+            <video autoplay controls muted loop playsinline style="width: 100%; height: auto;">
+              <source src="static/videos/VIDEO_FILE.mp4" type="video/mp4">
+            </video>
+            <p class="subtitle">Sample from EEH-R (Real)</p>
+          </div>
+          -->
         </div>
       </div>
     </div>
@@ -399,52 +554,32 @@
 </section>
 
 <section class="section hero is-small">
-  <div class="container is-max-desktop">
+  <div class="container is-max-widescreen">
     <div class="columns is-centered has-text-centered">
       <div class="column">
-        <h2 class="title is-3" style="display: inline-block; white-space: nowrap;">Real Dataset: EEH-R</h2>
-        <div class="content has-text-justified" style="max-width: 800px; margin: 0 auto;">
-          <p>
-            real dataset
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+        <h2 class="title is-3" style="display: inline-block; white-space: nowrap;">Results</h2>
+        <h3 class="title is-4" style="margin-top: 1.5rem;">Results on N-HOT3D</h3>
+        <figure style="margin: 1rem auto 2.5rem;">
+          <img src="static/images/result2.png" alt="Qualitative evaluation on the N-HOT3D dataset" style="max-width: 100%; height: auto;">
+          <figcaption style="font-size: 0.9rem; margin-top: 0.5rem; text-align: justify;">
+            Qualitative evaluation on N-HOT3D. We compared our method with EventHands, Ev2Hands, and EventEgoHands. RGB images were not used as input and are shown for reference only. In order from the top, the scenes show "pouring from a can", "picking up a can", "holding a pot", and "picking up a carton".
+          </figcaption>
+        </figure>
 
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column">
-        <h2 class="title is-3" style="display: inline-block; white-space: nowrap;">Results: N-HOT3D</h2>
-        <div class="content has-text-justified" style="max-width: 800px; margin: 0 auto;">
-          <p>
-            synthetic dataset
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section hero is-small">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column">
-        <h2 class="title is-3" style="display: inline-block; white-space: nowrap;">Results: EEH-R</h2>
-        <div class="content has-text-justified" style="max-width: 800px; margin: 0 auto;">
-          <p>
-            real dataset
-          </p>
-        </div>
+        <h3 class="title is-4" style="margin-top: 2rem;">Results on EEH-R</h3>
+        <figure style="margin: 1rem auto 0;">
+          <img src="static/images/result_real2.png" alt="Qualitative evaluation on the EEH-R real dataset" style="max-width: 100%; height: auto;">
+          <figcaption style="font-size: 0.9rem; margin-top: 0.5rem; text-align: justify;">
+            Qualitative evaluation on EEH-R. We compared our method with EventHands, Ev2Hands, and EventEgoHands. Grayscale images were not used as input and are shown for reference only. The grayscale images at the bottom are actual captured images, which appear almost empty due to the low-light environment. In order from the top, the scenes show "typing on a keyboard", "holding a bottle", and "using a spoon".
+          </figcaption>
+        </figure>
       </div>
     </div>
   </div>
 </section>
 
 <!-- <section class="section hero is-light">
-  <div class="container is-max-desktop">
+  <div class="container is-max-widescreen">
     <div class="columns is-centered has-text-centered">
       <div class="column">
         <h2 class="title is-3" style="display: inline-block; white-space: nowrap;">Results</h2>
@@ -461,7 +596,7 @@
 
 <!--BibTex citation -->
 <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
+    <div class="container is-max-widescreen content">
       <h2 class="title">BibTeX</h2>
 
       <div class="bibtex-entry">

@@ -131,8 +131,15 @@ $(document).ready(function() {
 		autoplaySpeed: 5000,
     }
 
-	// Initialize all div with carousel class
-    var carousels = bulmaCarousel.attach('.carousel', options);
+	// Initialize all div with carousel class.
+	// Skip carousels with a single item: bulma-carousel renders blank when
+	// there is nothing to slide, so a lone item is shown as-is instead.
+    var carousels = [];
+    document.querySelectorAll('.carousel').forEach(function (el) {
+        if (el.querySelectorAll('.item').length > 1) {
+            carousels = carousels.concat(bulmaCarousel.attach(el, options));
+        }
+    });
 	
     bulmaSlider.attach();
     
