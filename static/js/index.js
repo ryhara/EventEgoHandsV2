@@ -100,7 +100,10 @@ function setupVideoCarouselAutoplay() {
         entries.forEach(entry => {
             const video = entry.target;
             if (entry.isIntersecting) {
-                // Video is in view, play it
+                // Only play the video of the active slide; hidden slides can
+                // still intersect the viewport on wide screens.
+                const item = video.closest('.item');
+                if (item && !item.classList.contains('is-active')) return;
                 video.play().catch(e => {
                     // Autoplay failed, probably due to browser policy
                     console.log('Autoplay prevented:', e);
@@ -119,28 +122,84 @@ function setupVideoCarouselAutoplay() {
     });
 }
 
+// Fixed-width video carousel: one slide visible, arrows switch slides
+function setupResultsCarousel() {
+    const carousel = document.querySelector('.results-carousel');
+    if (!carousel) return;
+
+    const track = carousel.querySelector('.carousel-track');
+    const items = carousel.querySelectorAll('.item');
+    const prev = carousel.querySelector('.carousel-arrow-prev');
+    const next = carousel.querySelector('.carousel-arrow-next');
+    if (!track || items.length === 0 || !prev || !next) return;
+
+    let index = 0;
+
+    // Pagination dots: one per slide, showing position and total
+    const dotsContainer = document.createElement('div');
+    dotsContainer.className = 'carousel-dots';
+    const dots = Array.from(items, function (_, i) {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'carousel-dot';
+        dot.setAttribute('aria-label', 'Go to video ' + (i + 1));
+        dot.addEventListener('click', function () {
+            goTo(i);
+        });
+        dotsContainer.appendChild(dot);
+        return dot;
+    });
+    carousel.appendChild(dotsContainer);
+
+    function update() {
+        // Center the active slide so its neighbors peek at both edges.
+        // Percentages resolve against the track (= viewport) width.
+        track.style.transform =
+            'translateX(calc((100% - var(--carousel-slide-width)) / 2' +
+            ' - var(--carousel-gap)' +
+            ' - ' + index + ' * (var(--carousel-slide-width) + 2 * var(--carousel-gap))))';
+        items.forEach(function (item, i) {
+            item.classList.toggle('is-active', i === index);
+            const video = item.querySelector('video');
+            if (!video) return;
+            if (i === index) {
+                video.play().catch(function () {});
+            } else {
+                video.pause();
+            }
+        });
+        dots.forEach(function (dot, i) {
+            dot.classList.toggle('is-active', i === index);
+        });
+    }
+
+    function goTo(i) {
+        index = (i + items.length) % items.length;
+        update();
+    }
+
+    prev.addEventListener('click', function () {
+        goTo(index - 1);
+    });
+    next.addEventListener('click', function () {
+        goTo(index + 1);
+    });
+
+    // Clicking a peeked neighbor selects it
+    items.forEach(function (item, i) {
+        item.addEventListener('click', function () {
+            if (i !== index) goTo(i);
+        });
+    });
+
+    update();
+}
+
 $(document).ready(function() {
     // Check for click events on the navbar burger icon
 
-    var options = {
-		slidesToScroll: 1,
-		slidesToShow: 1,
-		loop: true,
-		infinite: true,
-		autoplay: true,
-		autoplaySpeed: 5000,
-    }
+    setupResultsCarousel();
 
-	// Initialize all div with carousel class.
-	// Skip carousels with a single item: bulma-carousel renders blank when
-	// there is nothing to slide, so a lone item is shown as-is instead.
-    var carousels = [];
-    document.querySelectorAll('.carousel').forEach(function (el) {
-        if (el.querySelectorAll('.item').length > 1) {
-            carousels = carousels.concat(bulmaCarousel.attach(el, options));
-        }
-    });
-	
     bulmaSlider.attach();
     
     // Setup video autoplay for carousel
