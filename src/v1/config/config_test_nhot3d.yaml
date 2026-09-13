@@ -1,0 +1,26 @@
+seed: 42
+num_workers: 4
+devices: [0]
+model: "EventEgoHandsV1"
+output_width: 346
+output_height: 260
+n_channels: 2
+n_classes: 1
+event_number_threshold: 2048
+sigmoid_threshold: 0.5
+mano_hand_model_path: "src/mano/models"
+mano_cmps: 15
+segmentation_checkpoint_path: ""
+time_bin: 3
+is_sequence: True
+dataset_mode: "full"
+dataset_divide: 1
+kernel_size: 5
+itterations: 2
+test:
+    batch_size: 16
+    event_input_dir: "/path/to/N-HOT3D/Aria/test"
+    gt_file_dir: "/path/to/N-HOT3D/Aria/test"
+    object_library_path: "/path/to/N-HOT3D/assets"
+    checkpoint_path: ""
+    is_get_image: False

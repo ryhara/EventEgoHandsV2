@@ -1,0 +1,3 @@
+[submodule "hot3d"]
+	path = hot3d
+	url = https://github.com/facebookresearch/hot3d.git

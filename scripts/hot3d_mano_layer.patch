@@ -1,0 +1,35 @@
+diff --git a/hot3d/data_loaders/mano_layer.py b/hot3d/data_loaders/mano_layer.py
+index 0a84d13..3582a86 100644
+--- a/hot3d/data_loaders/mano_layer.py
++++ b/hot3d/data_loaders/mano_layer.py
+@@ -67,12 +67,13 @@ class MANOHandModel:
+         self,
+         mano_model_files_dir: str,
+         joint_mapper: Optional[List] = mano_joint_mapping,
++        num_pose_coeffs: int = 15,
+     ):
+         mano_left_filename = os.path.join(mano_model_files_dir, "MANO_LEFT.pkl")
+         mano_right_filename = os.path.join(mano_model_files_dir, "MANO_RIGHT.pkl")
+ 
+         self.use_pose_pca = True
+-        self.num_pose_coeffs = 15
++        self.num_pose_coeffs = num_pose_coeffs
+         self.num_shape_params = 10
+         self.device = "cpu"
+         self.dtype = torch.float32
+@@ -184,6 +185,7 @@ class MANOHandModel:
+                     torch.tensor(
+                         list(self.MANO_FINGERTIP_VERT_INDICES.values()),
+                         dtype=torch.long,
++                        device=self.device,
+                     ),
+                 )
+                 joints = torch.cat([left_mano_output.joints, extra_joints], dim=1)
+@@ -198,6 +200,7 @@ class MANOHandModel:
+                     torch.tensor(
+                         list(self.MANO_FINGERTIP_VERT_INDICES.values()),
+                         dtype=torch.long,
++                        device=self.device,
+                     ),
+                 )
+                 joints = torch.cat([right_mano_output.joints, extra_joints], dim=1)

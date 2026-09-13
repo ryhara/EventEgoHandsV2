@@ -1,0 +1,29 @@
+seed: 42
+num_workers: 4
+devices: [0]
+model: "UNet"
+output_width: 346
+output_height: 260
+n_channels: 2
+n_classes: 1
+event_number_threshold: 2048
+mano_hand_model_path: "src/mano/models"
+time_bin: 3
+is_sequence: True
+dataset_mode: ""
+dataset_divide: 1
+kernel_size: 5
+itterations: 2
+sigmoid_threshold: 0.5
+
+test:
+  batch_size: 32
+  event_input_dir: "/path/to/N-HOT3D/Aria/test"
+  gt_file_dir: "/path/to/N-HOT3D/Aria/test"
+  rgb_dir: "/path/to/N-HOT3D/RGB/"
+  object_library_path: "/path/to/N-HOT3D/assets"
+  is_get_image: False
+  save_path: "data/save/"
+  checkpoint_path: ""
+  log_interval: 10
+  save_interval: 2

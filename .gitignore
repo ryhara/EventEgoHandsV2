@@ -1,0 +1,51 @@
+# python generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+resolved_data.yaml
+*.ckpt
+*.pyc
+
+# venv
+.venv
+
+# custom
+.DS_Store
+.env
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.mypy_cache/
+wandb/
+*.pth
+*.c3d
+*.npz
+uv.lock
+*.rrd
+
+# file
+*.txt
+*.mp4
+*.png
+*.jpg
+*.log
+*.pdf
+*.aedat4
+*.h5
+*.csv
+*.pkl
+*.gif
+*.xml
+*.json
+*.obj
+
+*.pt
+**/log_yolo*/**/*
+data/logs/
+
+# docs assets (exception)
+!docs/assets/*.png
+

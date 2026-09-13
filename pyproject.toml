@@ -1,0 +1,69 @@
+[project]
+name = "EventEgoHands"
+version = "0.1.0"
+description = ""
+authors = [
+    { name = "ryhara", email = "ryosei.hara@gmail.com" }
+]
+dependencies = [
+    "omegaconf>=2.3.0",
+    "tqdm>=4.66.4",
+    "wandb>=0.17.4",
+    "opencv-python>=4.10.0.84",
+    "matplotlib>=3.9.2",
+    "scikit-learn>=1.5.1",
+    "scipy>=1.11.0",
+    "pillow>=10.4.0",
+    "torch>=2.3.1",
+    "torchvision>=0.19.0",
+    "torchviz>=0.0.2",
+    "h5py>=3.11.0",
+    "numpy==1.26.4",
+    "pyyaml>=6.0",
+    "projectaria-tools>=1.5.4",
+    "smplx @ git+https://github.com/vchoutas/smplx.git",
+    "chumpy @ git+https://github.com/mattloper/chumpy.git",
+    "setuptools>=74.0.0",
+    "pyrender>=0.1.45",
+    "rerun-sdk>=0.22.1,<0.23",
+    "ultralytics>=8.3.243",
+    "blosc2>=3.12.2",
+    "timm>=1.0.24",
+    "vrs>=1.2.2",
+]
+readme = "README.md"
+requires-python = ">= 3.10"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.11.12",
+    "mypy>=1.11.2",
+]
+
+[tool.uv]
+no-build-isolation-package = ["chumpy"]
+
+# The default PyPI torch is built against CUDA 13, which needs a driver newer than
+# the 535 series installed here; pin torch/torchvision to the CUDA 12.6 builds.
+[[tool.uv.index]]
+name = "pytorch-cu126"
+url = "https://download.pytorch.org/whl/cu126"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu126" }
+torchvision = { index = "pytorch-cu126" }
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/"]
+
+[tool.ruff]
+
+[tool.mypy]

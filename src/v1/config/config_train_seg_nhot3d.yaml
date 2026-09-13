@@ -1,0 +1,32 @@
+seed: 42
+num_workers: 4
+devices: [0]
+model: "UNet"
+segmentation_dropout_prob: 0.0
+loss: "MaskLoss"
+output_width: 346
+output_height: 260
+n_channels: 2
+n_classes: 1
+mano_hand_model_path: "src/mano/models"
+time_bin: 3
+is_sequence: True
+dataset_mode: ""
+dataset_divide: 1
+train:
+  batch_size: 32 # 64
+  epochs: 10
+  lr: 0.00001
+  weight_decay: 0.01
+  gamma: 0.8
+  alpha: 0.3 # dice loss weight (lambda_beta). BCE weight is 1 - alpha (lambda_alpha = 0.7)
+  step_size: 1
+  event_input_dir: "/path/to/N-HOT3D/Aria/train"
+  gt_file_dir: "/path/to/N-HOT3D/Aria/train"
+  object_library_path: "/path/to/N-HOT3D/assets"
+  checkpoint_path: ""
+  is_get_image: False
+  augmentation: True
+  save_path: "data/save/"
+  log_interval: 100
+  save_interval: 2

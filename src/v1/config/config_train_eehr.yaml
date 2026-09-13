@@ -1,0 +1,45 @@
+seed: 42
+num_workers: 4
+devices: [0]
+model: "EventEgoHandsV1"
+output_width: 224
+output_height: 224
+n_channels: 2
+n_classes: 1
+event_number_threshold: 2048
+sigmoid_threshold: 0.5
+mano_hand_model_path: "src/mano/models"
+mano_cmps: 15
+segmentation_checkpoint_path: ""
+kernel_size: 5
+itterations: 2
+
+# Real dataset settings
+real_dataset_root: "/path/to/EEH-R"
+real_dataset_fps: 30
+annotation_source: "mano"
+annotation_fps: 30
+# LNES reconstruction from raw events (events/*.h5)
+# Forced on when annotation_fps > 30 (no pre-rendered PNG exists for sub-frames).
+# Set true to also rebuild the 30fps LNES from h5 (keeps 30/120fps consistent).
+lnes_from_h5: false
+# LNES integration window in seconds (1/30 matches the stored lnes_frames/*.png)
+lnes_window_sec: 0.03333333333333333
+use_center_crop: false
+ignore_files_count: 0
+
+train:
+  batch_size: 16
+  epochs: 10
+  lr: 0.00001
+  weight_decay: 0.00
+  checkpoint_path: ""
+  save_path: "data/save/"
+  log_interval: 100
+  save_interval: 2
+  dataset_divide: 1
+
+test:
+  batch_size: 16
+  checkpoint_path: ""
+  log_interval: 10

@@ -1,0 +1,83 @@
+dataset_type: "synth"
+seed: 42
+num_workers: 4
+devices: [0]
+dataset_mode: "normal"
+model: "EfficientNetV2_S"
+output_width: 224
+output_height: 224
+n_channels: 2
+mano_hand_model_path: "src/mano/models"
+mano_cmps: 45
+mano_use_pose_pca: False
+output_mano_dim: 122 # 61*2: pose 45, shape 10, global_orient 3, transl 3
+focal_length: 5000.0
+# YOLO segmentation model checkpoint
+yolo_checkpoint_path: ""
+yolo_conf_threshold: 0.5
+yolo_iou_threshold: 0.45
+# Mask settings (bbox_expand_ratio kept for compatibility but not used in mask model)
+bbox_expand_ratio: 1.5
+use_mask: true
+mask_dilation_kernel_size: 7
+mask_dilation_iterations: 1
+ignore_files_count: 50
+# Attention settings
+use_cross_attention: true   # Enable cross-attention when both hands detected
+use_self_attention: true    # Enable self-attention when only one hand detected
+attention_num_heads: 8      # Number of attention heads
+attention_dropout: 0.1      # Dropout rate in attention layers
+# Spatial attention settings
+use_positional_encoding: true     # Add 2D positional encoding to spatial features
+num_attention_layers: 1           # Number of stacked attention layers
+# V2 specific settings
+use_learnable_pos_encoding: true  # Use learnable positional encoding (vs fixed sinusoidal)
+pos_encoding_base_size: 7        # Base size for learnable PE (interpolated if different)
+add_pos_encoding_every_layer: true  # Add PE at every attention layer (vs only first)
+use_shared_backbone: true        # Use shared backbone for left and right hands
+attention_order: "self_first"     # "cross_first" or "self_first"
+train:
+  batch_size: 32
+  epochs: 30
+  lr: 0.00002
+  weight_decay: 0.0001
+  # Scheduler settings
+  use_scheduler: true
+  warmup_epochs: 1
+  warmup_lr: 1.0e-6
+  min_lr: 1.0e-6
+  warmup_prefix: true
+  cycle_limit: 1
+  event_input_dir: "/path/to/N-HOT3D/Aria"
+  gt_file_dir: "/path/to/N-HOT3D/Aria"
+  rgb_dir: "/path/to/N-HOT3D/RGB/"
+  yolo_image_dir: "/path/to/NHOT3D_yolo_seg_lnes_frame_v2/images"
+  lnes_blosc2_dir: "/path/to/NHOT3D_lnes_blosc2/images"
+  object_library_path: "/path/to/N-HOT3D/assets"
+  dataset_divide: 1
+  is_get_image: False
+  augmentation: True
+  save_path: "data/save/"
+  log_interval: 10
+  save_interval: 5
+  checkpoint_path: ""
+  losses: ["joints_3d", "vertices", "hand_pose", "shape", "inter_j3d"]
+  loss_j3d_ratio: 2.0
+  loss_j3d_relative_ratio: 2.0
+  loss_vertices_ratio: 2.0
+  loss_hand_pose_ratio: 1.0
+  loss_shape_ratio: 1.0
+  loss_inter_j3d_ratio: 1.0
+test:
+  batch_size: 16
+  event_input_dir: "/path/to/N-HOT3D/Aria"
+  gt_file_dir: "/path/to/N-HOT3D/Aria"
+  rgb_dir: "/path/to/N-HOT3D/RGB/"
+  yolo_image_dir: "/path/to/NHOT3D_yolo_seg_lnes_frame_v2/images"
+  lnes_blosc2_dir: "/path/to/NHOT3D_lnes_blosc2/images"
+  object_library_path: "/path/to/N-HOT3D/assets"
+  is_get_image: True
+  save_path: "data/save/"
+  checkpoint_path: ""
+  log_interval: 10
+  save_interval: 2
