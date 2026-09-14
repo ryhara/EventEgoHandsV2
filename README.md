@@ -26,7 +26,7 @@
 
 This is the official implementation of [EventEgoHands++ (IEEE Access 2026)](https://ryhara.github.io/EventEgoHandsV2/) and [EventEgoHands (ICIP 2025)](https://ryhara.github.io/EventEgoHands/)
 
-- `src/v2/` : EventEgoHandsV2 (Under Review)
+- `src/v2/` : EventEgoHandsV2 (IEEE Access 2026)
 
 <div align="center">
   <img src="docs/assets/v2_method.png" width="100%" alt="EventEgoHandsV2 method overview">
