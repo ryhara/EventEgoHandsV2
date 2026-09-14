@@ -184,7 +184,7 @@ options (live viewer, browser, `.rrd` file). See
 
 ### IEEE Access 2026
 ```bibtex
-@article{hara2026eventegohandspp,
+@article{hara2026eventegohands2,
   author = {Hara, Ryosei and Ikeda, Wataru and Hatano, Masashi and Isogawa, Mariko},
   journal = {IEEE Access},
   title = {EventEgoHands++: Event-based Egocentric 3D Hand Mesh Reconstruction with Real Dataset},
