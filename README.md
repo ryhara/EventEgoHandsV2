@@ -15,11 +15,11 @@
 
 <a href='https://ryhara.github.io/EventEgoHandsV2/'><img src='https://img.shields.io/badge/Project_Page-v2_(IEEE Access 2026)-blue'></a>
 <a href='#'><img src='https://img.shields.io/badge/arXiv-v2_(IEEE Access 2026)-red'></a>
-<a href='https://forms.gle/fkUq73ZCriLJ6vFU8'><img src="https://img.shields.io/endpoint?url=https://script.google.com/macros/s/AKfycbx0PoSU8kwXk_ZIg5CXSI2Oeha_JT4BLQy2Cs8r16OwTVDwLBofy0AFQepcyfShA9aa/exec&logo=data:image/svg%2Bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTEyIDE1VjMiLz48cGF0aCBkPSJNMjEgMTV2NGEyIDIgMCAwIDEtMiAySDVhMiAyIDAgMCAxLTItMnYtNCIvPjxwYXRoIGQ9Im03IDEwIDUgNSA1LTUiLz48L3N2Zz4="></a>
+<a href='https://forms.gle/fkUq73ZCriLJ6vFU8'><img src="https://img.shields.io/endpoint?url=https://script.google.com/macros/s/AKfycbx0PoSU8kwXk_ZIg5CXSI2Oeha_JT4BLQy2Cs8r16OwTVDwLBofy0AFQepcyfShA9aa/exec"></a>
 
 <a href='https://ryhara.github.io/EventEgoHands/'><img src='https://img.shields.io/badge/Project_Page-v1_(ICIP 2025)-blue'></a>
 <a href='https://arxiv.org/abs/2505.19169'><img src='https://img.shields.io/badge/arXiv-v1_(ICIP2025)-red'></a>
-<a href='https://forms.gle/qza3hqaK6AXH7JoZ7'><img src="https://img.shields.io/endpoint?url=https://script.google.com/macros/s/AKfycbzCrXSGoDe14PbdQq8yFsnyvOXveGL_HNxxjGpu-5QB9GPxIttk4GfADicGMHleGLWq/exec&logo=data:image/svg%2Bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTEyIDE1VjMiLz48cGF0aCBkPSJNMjEgMTV2NGEyIDIgMCAwIDEtMiAySDVhMiAyIDAgMCAxLTItMnYtNCIvPjxwYXRoIGQ9Im03IDEwIDUgNSA1LTUiLz48L3N2Zz4="></a>
+<a href='https://forms.gle/qza3hqaK6AXH7JoZ7'><img src="https://img.shields.io/endpoint?url=https://script.google.com/macros/s/AKfycbzCrXSGoDe14PbdQq8yFsnyvOXveGL_HNxxjGpu-5QB9GPxIttk4GfADicGMHleGLWq/exec"></a>
 
 </div>
 
@@ -40,10 +40,10 @@ This is the official implementation of [EventEgoHands++ (IEEE Access 2026)](http
 
 ## Download Datasets
 
-- <a href='https://forms.gle/qza3hqaK6AXH7JoZ7'><img src="https://img.shields.io/endpoint?url=https://script.google.com/macros/s/AKfycbzCrXSGoDe14PbdQq8yFsnyvOXveGL_HNxxjGpu-5QB9GPxIttk4GfADicGMHleGLWq/exec&logo=data:image/svg%2Bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTEyIDE1VjMiLz48cGF0aCBkPSJNMjEgMTV2NGEyIDIgMCAwIDEtMiAySDVhMiAyIDAgMCAxLTItMnYtNCIvPjxwYXRoIGQ9Im03IDEwIDUgNSA1LTUiLz48L3N2Zz4="></a>
-  - [Request Form](https://forms.gle/qza3hqaK6AXH7JoZ7)
+- **N-HOT3D**
+  - [Request Form](https://forms.gle/qza3hqaK6AXH7JoZ7) 
   -  [Document](https://github.com/ryhara/N-HOT3D)
-- <a href='https://forms.gle/fkUq73ZCriLJ6vFU8'><img src="https://img.shields.io/endpoint?url=https://script.google.com/macros/s/AKfycbx0PoSU8kwXk_ZIg5CXSI2Oeha_JT4BLQy2Cs8r16OwTVDwLBofy0AFQepcyfShA9aa/exec&logo=data:image/svg%2Bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTEyIDE1VjMiLz48cGF0aCBkPSJNMjEgMTV2NGEyIDIgMCAwIDEtMiAySDVhMiAyIDAgMCAxLTItMnYtNCIvPjxwYXRoIGQ9Im03IDEwIDUgNSA1LTUiLz48L3N2Zz4="></a>
+- **EEH-R**
   - [Request Form](https://forms.gle/fkUq73ZCriLJ6vFU8)
   - [Document](docs/README_EEHR.md)
  
