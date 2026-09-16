@@ -5,6 +5,15 @@
 ```
 EEH-R/
 ├── YOLO/
+│   ├── images/
+│   │   ├── train/
+│   │   ├── val/
+│   │   └── test/
+│   ├── labels/
+│   │   ├── train/
+│   │   ├── val/
+│   │   └── test/
+│   └── train.yaml
 ├── annotations_120fps (or 30fps)
 │   ├── P04_01
 │   │   ├── mocap_data
@@ -65,8 +74,16 @@ EEH-R/
 ```
 
 
-- `YOLO/`
-  - TODO
+- `YOLO/` (YOLO format files)　**※ v2_EEHR_yolo is a refined version of v1_EEHR_yolo. The results reported in the paper were obtained using models trained on v1_EEHR_yolo**
+  -  images/
+      - train/*.png
+      - val/*.png
+      - test/*.png
+  -  lables/
+      - train/*.txt
+      - val/*.txt
+      - test/*.txt
+  -  train.yaml
 - `annotations_120fps/` (or 30fps)
   - `PXX_YY/`
     - `mocap_data/`
