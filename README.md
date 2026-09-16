@@ -14,7 +14,7 @@
 
 
 <a href='https://ryhara.github.io/EventEgoHandsV2/'><img src='https://img.shields.io/badge/Project_Page-v2_(IEEE Access 2026)-blue'></a>
-<a href='#'><img src='https://img.shields.io/badge/arXiv-v2_(IEEE Access 2026)-red'></a>
+<a href='https://arxiv.org/abs/2609.17189'><img src='https://img.shields.io/badge/arXiv-v2_(IEEE Access 2026)-red'></a>
 <a href='https://forms.gle/fkUq73ZCriLJ6vFU8'><img src="https://img.shields.io/endpoint?url=https://script.google.com/macros/s/AKfycbx0PoSU8kwXk_ZIg5CXSI2Oeha_JT4BLQy2Cs8r16OwTVDwLBofy0AFQepcyfShA9aa/exec"></a>
 
 <a href='https://ryhara.github.io/EventEgoHands/'><img src='https://img.shields.io/badge/Project_Page-v1_(ICIP 2025)-blue'></a>
