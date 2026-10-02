@@ -189,8 +189,10 @@ options (live viewer, browser, `.rrd` file). See
   journal = {IEEE Access},
   title = {EventEgoHands++: Event-based Egocentric 3D Hand Mesh Reconstruction with Real Dataset},
   year = {2026},
-  volume = {},
-  number = {},
+  volume={14},
+  number={},
+  pages={148943-148960},
+  doi={10.1109/ACCESS.2026.3735008},
 }
 ```
 
